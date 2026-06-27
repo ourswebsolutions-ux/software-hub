@@ -1,32 +1,31 @@
 {
-  "name": "software-template",
+  "name": "software-hub",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint",
-    "type-check": "tsc --noEmit"
+    "lint": "next lint",
+    "vercel-build": "npm install --legacy-peer-deps && npm run build"
   },
   "dependencies": {
-    "lucide-react": "^1.21.0",
-    "next": "16.2.9",
-    "react": "19.2.4",
-    "react-dom": "19.2.4",
-    "react-icons": "^4.12.0"
+    "next": "14.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^18",
-    "eslint": "^9",
-    "eslint-config-next": "16.2.9",
-    "tailwindcss": "^4",
-    "typescript": "^5",    
-    "autoprefixer": "^10.0.1",
-    "postcss": "^8"
-    
+    "@types/node": "^20.11.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "14.2.0",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
