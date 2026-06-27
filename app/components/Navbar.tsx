@@ -9,25 +9,18 @@ const Navbar = () => {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/90 backdrop-blur-md">
-      <div className="mx-auto flex h-18 max-w-7xl items-center justify-between px-6 lg:px-8">
+      <div className="mx-auto flex h-25 max-w-7xl items-center justify-between px-6 lg:px-8">
         {/* Left - Logo */}
-        <Link href="/" className="flex items-center gap-4">
-          <div className="relative flex items-center justify-center bg-white rounded-xl border-2 border-black p-2 shadow-md">
+        <Link href="/" className="flex items-center">
+          <div className="relative flex items-center justify-center">
             <Image
-              src="/images/logo.jpeg"
+              src="/images/logo.png"
               alt="Software Template"
-              width={80}
-              height={80}
-              className="rounded-lg object-cover"
+              width={270}
+              height={120}
+              className="object-cover"
               priority
             />
-          </div>
-          <div className="flex items-center gap-4">
-            <div className="h-14 w-px bg-gray-300" />
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900">
-              Software
-              <span className="ml-2 text-[#00B140]">Template</span>
-            </h1>
           </div>
         </Link>
 
