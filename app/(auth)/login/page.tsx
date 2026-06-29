@@ -19,10 +19,7 @@ export default function LoginPage() {
   return (
     <>
       <Navbar />
-      <div className="min-h-[calc(100vh-80px)] flex items-center justify-center p-4 relative overflow-hidden bg-[#0a0a0a]">
-        {/* Simple Background - No animations */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a] via-[#0a0a0a] to-[#0d1a0d]" />
-        
+      <div className="min-h-[calc(100vh-64px)] flex items-center justify-center p-4 relative overflow-hidden bg-[#f0f5f1]">
         {/* Auth Card */}
         <AuthCard
           title="Welcome Back"
@@ -33,21 +30,21 @@ export default function LoginPage() {
         >
           <form onSubmit={handleSubmit} className="space-y-5">
             <div>
-              <label className="block text-white/80 text-sm font-medium mb-2">
+              <label className="block text-gray-700 text-sm font-medium mb-2">
                 Email Address
               </label>
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/40 focus:outline-none focus:border-[#00B140] focus:ring-2 focus:ring-[#00B140]/20 transition-all"
+                className="w-full px-4 py-3 rounded-xl bg-white/40 backdrop-blur-md border border-white/50 text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#036627] focus:ring-2 focus:ring-[#036627]/20 transition-all"
                 placeholder="you@example.com"
                 required
               />
             </div>
 
             <div>
-              <label className="block text-white/80 text-sm font-medium mb-2">
+              <label className="block text-gray-700 text-sm font-medium mb-2">
                 Password
               </label>
               <div className="relative">
@@ -55,38 +52,38 @@ export default function LoginPage() {
                   type={showPassword ? "text" : "password"}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/40 focus:outline-none focus:border-[#00B140] focus:ring-2 focus:ring-[#00B140]/20 transition-all pr-12"
+                  className="w-full px-4 py-3 rounded-xl bg-white/40 backdrop-blur-md border border-white/50 text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#036627] focus:ring-2 focus:ring-[#036627]/20 transition-all pr-12"
                   placeholder="Enter your password"
                   required
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-white/50 hover:text-white/80 transition-colors"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
                   aria-label={showPassword ? "Hide password" : "Show password"}
                 >
                   {showPassword ? (
-                    <Eye className="w-5 h-5" />
-                  ) : (
                     <EyeOff className="w-5 h-5" />
+                  ) : (
+                    <Eye className="w-5 h-5" />
                   )}
                 </button>
               </div>
             </div>
 
             <div className="flex items-center justify-between">
-              <label className="flex items-center gap-2 text-white/60 text-sm">
-                <input type="checkbox" className="accent-[#00B140] w-4 h-4" />
+              <label className="flex items-center gap-2 text-gray-600 text-sm">
+                <input type="checkbox" className="accent-[#036627] w-4 h-4" />
                 Remember me
               </label>
-              <Link href="/forgot-password" className="text-[#00B140] text-sm hover:underline">
+              <Link href="/forgot-password" className="text-[#036627] text-sm hover:underline">
                 Forgot password?
               </Link>
             </div>
 
             <button
               type="submit"
-              className="w-full py-3 px-4 bg-[#00B140] hover:bg-[#009a35] text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-green-500/30 hover:shadow-green-500/50 hover:-translate-y-0.5"
+              className="w-full py-3 px-4 bg-[#036627] hover:bg-[#036627]/90 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-[#036627]/30 hover:shadow-[#036627]/50 hover:-translate-y-0.5"
             >
               Sign In
             </button>
