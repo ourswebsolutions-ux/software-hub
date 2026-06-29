@@ -3,9 +3,19 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  // Check if current path is active
+  const isActive = (path: string) => {
+    if (path === "/") {
+      return pathname === "/";
+    }
+    return pathname === path || pathname.startsWith(path + "/");
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-[#036627]/40 bg-[#036627] backdrop-blur-md">
@@ -28,16 +38,29 @@ const Navbar = () => {
         <nav className="hidden items-center gap-8 md:flex">
           <Link
             href="/"
-            className="relative text-base font-medium text-white/80 transition hover:text-white"
+            className={`relative text-base font-medium transition ${
+              isActive("/")
+                ? "text-white"
+                : "text-white/80 hover:text-white"
+            }`}
           >
             Browse
-            <span className="absolute -bottom-2 left-0 h-[3px] w-full rounded-full bg-white" />
+            {isActive("/") && (
+              <span className="absolute -bottom-2 left-0 h-[3px] w-full rounded-full bg-white" />
+            )}
           </Link>
           <Link
-            href="/my-templates"
-            className="text-base font-medium text-white/80 transition hover:text-white"
+            href="/dashboard"
+            className={`relative text-base font-medium transition ${
+              isActive("/dashboard")
+                ? "text-white"
+                : "text-white/80 hover:text-white"
+            }`}
           >
             My Templates
+            {isActive("/dashboard") && (
+              <span className="absolute -bottom-2 left-0 h-[3px] w-full rounded-full bg-white" />
+            )}
           </Link>
         </nav>
 
@@ -94,14 +117,22 @@ const Navbar = () => {
           <nav className="flex flex-col space-y-4">
             <Link
               href="/"
-              className="text-lg font-medium text-white/80 transition hover:text-white"
+              className={`text-lg font-medium transition ${
+                isActive("/")
+                  ? "text-white"
+                  : "text-white/80 hover:text-white"
+              }`}
               onClick={() => setIsMenuOpen(false)}
             >
               Browse
             </Link>
             <Link
-              href="/my-templates"
-              className="text-lg font-medium text-white/80 transition hover:text-white"
+              href="/dashboard"
+              className={`text-lg font-medium transition ${
+                isActive("/dashboard")
+                  ? "text-white"
+                  : "text-white/80 hover:text-white"
+              }`}
               onClick={() => setIsMenuOpen(false)}
             >
               My Templates
