@@ -32,8 +32,8 @@ const AuthCard = ({
         <div className="relative z-10">
           {/* Logo */}
           <div className="flex justify-center mb-6">
-            <div className="w-16 h-16 bg-[#00B140] rounded-2xl flex items-center justify-center shadow-lg shadow-green-500/30">
-              <span className="text-2xl font-bold text-white">ST</span>
+            <div className="w-16 h-16 bg-[#96faba] rounded-2xl flex items-center justify-center shadow-lg shadow-green-500/30">
+              <span className="text-2xl font-bold text-white"><img src="../images/icon.png" alt="icon" /></span>
             </div>
           </div>
 
